@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page introuvable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        html,body{
+            height: 100%;
+        }
+        
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background-color: #f0eaea; */
+            padding: 20px;
+        } 
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 20px;
+            text-align: center;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+        }
+        
+        .error-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 80px;
+            font-weight: bold;
+        }
+        
+        .plate-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #e2d6f5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .fork {
+            position: absolute;
+            width: 60px;
+            height: 8px;
+            background-color: #ffc966;
+            transform: rotate(-45deg);
+            top: 40%;
+            left: 20%;
+            border-radius: 4px;
+        }
+        
+        .spoon {
+            position: absolute;
+            width: 60px;
+            height: 8px;
+            background-color: #ffe591;
+            transform: rotate(45deg);
+            top: 40%;
+            right: 20%;
+            border-radius: 4px;
+        }
+        
+        .spoon::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #a1e3e8;
+            border-radius: 50%;
+            top: -7px;
+            right: -10px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #222;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background-color: #e2d6f5;
+            color: #7d55c7;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #d1c1eb;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .error-number {
+                font-size: 60px;
+            }
+            
+            .plate-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .error-number {
+                font-size: 48px;
+            }
+            
+            .plate-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .fork, .spoon {
+                width: 40px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-number">
+            4
+            <div class="plate-icon">
+                <div class="fork"></div>
+                <div class="spoon"></div>
+            </div>
+            4
+        </div>
+        <h1>Page introuvable</h1>
+        <p>Cette page semble avoir faim... elle est introuvable.</p>
+        <button class="btn">Revenir à la page d'accueil</button>
+    </div>
+</body>
+</html>
