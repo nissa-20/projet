@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Profil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        h1 {
+            color: #8e44ad;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p.subtitle {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .card.section {
+            display: block;
+        }
+
+        .card-title {
+            color: #8e44ad;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .profile-image-container {
+            width: 100px;
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #f0e6f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-email {
+            font-size: 12px;
+            color: #666;
+            word-break: break-word;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            min-width: 250px;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-row .btn-modify {
+            height: 38px;
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border-radius: 5px;
+            border: 1px solid #8e44ad;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #e8d1f2;
+            color: #8e44ad;
+        }
+
+        .btn-outline {
+            background-color: #e8d1f2;
+            border: 1px solid #8e44ad;
+            color: #8e44ad;
+            
+        }
+
+        .btn-modify {
+            background-color: #e8d1f2;
+            color: #8e44ad;
+        }
+
+        .success-message {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .actions-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .file-upload {
+            display: none;
+        }
+
+        .image-upload-btn {
+            background-color: #f0e6f5;
+            border: 1px dashed #8e44ad;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .image-upload-btn:hover {
+            background-color: #e8d1f2;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card.section .btn.btn-outline {
+            display: block;
+            margin-left: auto;
+        }
+        
+        /* Styles pour les modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-title {
+            color: #8e44ad;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        /* Styles pour le formulaire de mot de passe */
+        .password-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .password-form .form-group {
+            margin-bottom: 0;
+        }
+        
+        /* Styles pour la confirmation de suppression */
+        .confirmation-modal p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .confirmation-modal .modal-footer {
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .profile-info {
+                width: 100%;
+            }
+
+            .btn-container {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            p.subtitle {
+                text-align: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-row .btn-modify {
+                width: 100%;
+                height: auto;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Votre Profil</h1>
+        <p class="subtitle">Gérez vos informations, consultez vos dons et actions de bénévolat, et modifiez votre mot de passe</p>
+
+        <div class="card">
+            <div class="profile-image-container">
+                <label for="profile-pic-upload" class="profile-image">
+                    <img id="profile-preview" src="image/freepik__a-faceless-woman-with-dark-hair-wearing-a-red-dres__9215-removebg-preview__1_-removebg-preview 1.png" alt="Photo de profil">
+                </label>
+                <input type="file" id="profile-pic-upload" class="file-upload" accept="image/*">
+                <div class="profile-name" id="display-name">Sait Hayat</div>
+                <div class="profile-email" id="display-email">saithayat@gmail.com</div>
+            </div>
+
+            <div class="profile-info">
+                <h2 class="card-title">Informations personnelles</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom d'utilisateur</label>
+                        <input type="text" id="name" placeholder="Votre nom d'utilisateur">
+                    </div>
+                    <button class="btn btn-modify">Modifier</button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" placeholder="votre.email@exemple.com">
+                    </div>
+                    <button class="btn btn-modify">Modifier</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card section">
+            <h2 class="card-title">Sécurité et confidentialité :</h2>
+            <p class="success-message">Modifier votre mot de passe en cliquant sur le bouton ci-dessous. Choisissez un mot de passe sécurisé pour protéger l'accès à votre compte.</p>
+            <button class="btn btn-outline" id="btn-change-password">Modifier mon mot de passe</button>
+        </div>
+
+        <div class="card section">
+            <h2 class="card-title">Mes actions solidaires :</h2>
+            <p class="actions-description">
+                Retrouvez ici l'historique de vos dons et de vos engagements en tant que bénévole et donateur. Un aperçu de votre impact au sein de la communauté.
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-primary">Consulter mes actions</button>
+            </div>
+        </div>
+
+        <div class="card section">
+            <h2 class="card-title">Supprimer mon compte :</h2>
+            <p class="actions-description">
+                La suppression de votre compte est définitive. Toutes vos informations et vos actions passées (dons, bénévolat) seront perdues et ne pourront pas être récupérées.
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-primary" id="btn-delete-account">Supprimer mon compte</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modale pour modifier le mot de passe -->
+    <div class="modal" id="password-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Sécurité et confidentialité :</h2>
+            <form class="password-form">
+                <div class="form-group">
+                    <label for="old-password">Ancien mot de passe</label>
+                    <input type="password" id="old-password" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nouveau mot de passe</label>
+                    <input type="password" id="new-password" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmez votre mot de passe</label>
+                    <input type="password" id="confirm-password" placeholder="">
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btn-save-password">Modifier mon mot de passe</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modale pour confirmer la suppression du compte -->
+    <div class="modal confirmation-modal" id="delete-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Vous êtes sur le point de supprimer votre compte</h2>
+            <p>Êtes-vous sûr(e) de vouloir supprimer votre compte ? Cette action est irréversible</p>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="btn-cancel-delete">Non, revenir</button>
+                <button class="btn btn-primary" id="btn-confirm-delete">Oui, supprimer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir une modale
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        
+        // Fonction pour fermer une modale
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Bouton pour modifier le mot de passe
+        document.getElementById('btn-change-password').addEventListener('click', function() {
+            openModal('password-modal');
+        });
+        
+        // Bouton pour supprimer le compte
+        document.getElementById('btn-delete-account').addEventListener('click', function() {
+            openModal('delete-modal');
+        });
+        
+        // Bouton pour annuler la suppression
+        document.getElementById('btn-cancel-delete').addEventListener('click', function() {
+            closeModal('delete-modal');
+        });
+        
+        // Bouton pour confirmer la suppression
+        document.getElementById('btn-confirm-delete').addEventListener('click', function() {
+            // Ici vous pouvez ajouter la logique pour la suppression du compte
+            alert('Compte supprimé avec succès.');
+            closeModal('delete-modal');
+        });
+        
+        // Bouton pour sauvegarder le nouveau mot de passe
+        document.getElementById('btn-save-password').addEventListener('click', function() {
+            // Vérifier si les mots de passe correspondent
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (newPassword === confirmPassword) {
+                // Ici vous pouvez ajouter la logique pour changer le mot de passe
+                alert('Mot de passe modifié avec succès.');
+                closeModal('password-modal');
+            } else {
+                alert('Les mots de passe ne correspondent pas.');
+            }
+        });
+        
+        // Fermer les modales en cliquant en dehors
+        window.addEventListener('click', function(event) {
+            const passwordModal = document.getElementById('password-modal');
+            const deleteModal = document.getElementById('delete-modal');
+            
+            if (event.target === passwordModal) {
+                closeModal('password-modal');
+            }
+            
+            if (event.target === deleteModal) {
+                closeModal('delete-modal');
+            }
+        });
+    </script>
+</body>
+</html>
