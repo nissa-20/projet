@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Espace pour le logo -->
+            <div class="logo-space me-4">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            
+            <!-- Bouton hamburger pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Contenu de la navbar centrée -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Actions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ramadan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Annonces</a>
+                    </li>
+                </ul>
+                
+                <!-- Bouton de connexion à droite -->
+                <a href="../login/login.html" class="btn login-btn d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                      <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg>
+                  Log in
+              </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blur-background"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="text-content">
+                    <h1 class="main-title">Assirem</h1>
+                    <h2 class="subtitle">Unis par <span class="highlight">l'espoir</span></h2>
+                    <p class="description">Ensemble pour faciliter la mise en relation entre associations, donateurs et bénévoles en Algérie.</p>
+                  <div class="mt-4">
+    <a href="../login/login.html">
+        <button class="action-btn action-donate" id="don">Agir avec nous</button>
+    </a>
+    <a href="../login/login.html">
+        <button class="action-btn action-help">Obtenir de l'aide</button>
+    </a>
+</div>
+
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img class="img-fluid main-image" src="images/Girl donates money to  man (1).png" alt="Girl donates money to man">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid qui-sommes-nous">
+        <div class="row align-items-center">
+          
+          <!-- Texte -->
+          <div class="col-md-6 px-4">
+            <div class="titre d-flex align-items-center mb-3">
+              <i class="fas fa-people-group icone-titre me-2"></i>
+              <h1>Qui s<span class="highlight-circle">om</span>me nous</h1>
+            </div>
+            <p>
+              Assirem est une plateforme caritative dédiée à la solidarité
+              <br class="d-none d-md-block">
+              en Algérie. Nous connectons donateurs, bénévoles et associations pour faciliter les dons, le volontariat et l'organisation d'événements humanitaires. Ensemble, nous œuvrons pour un monde plus juste et 
+              bienveillant.
+            </p>
+          </div>
+    
+          <!-- Image -->
+          <div class="col-md-6 text-center mt-4 mt-md-0">
+            <img src="images/photoaider.png" alt="photo aider" class="img-fluid" style="max-width: 400px;">
+          </div>
+    
+        </div>
+      </div>
+    
+
+
+      <div class="carousel-container">
+
+        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+    
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="slide-layout">
+                <div class="slide-title">Nos services</div>
+                <div class="slide-content">
+                  <div class="slide-text">
+                    <h3>Dons disponibles</h3>
+                    <p> <br>Consultez les dons offerts par les associations: Nourriture, vêtements, Fournitures scolaires, Jouets</p>
+                  </div>
+                  <div class="slide-image">
+                    <img src="images/illust de dons (2).png" alt="Dons">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="slide-layout">
+                <div class="slide-title">Nos services</div>
+                <div class="slide-content">
+                  <div class="slide-text">
+                    <h3>Collecte de dons</h3>
+                    <p> <br>Faites un don en argent ou en biens essentiels pour soutenir ceux dans le besoin</p>
+                  </div>
+                  <div class="slide-image">
+                    <img src="images/Woman donates money to charity .png" alt="Bénévolat">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="slide-layout">
+                <div class="slide-title">Nos services</div>
+                <div class="slide-content">
+                  <div class="slide-text">
+                    <h3>Bénévolat</h3>
+                    <p> <br>Inscrivez-vous comme bénévole et participez aux actions solidaires. Que ce soit pour aider lors d'événements, distribuer des dons ou apporter un soutien logistique.</p>
+                  </div>
+                  <div class="slide-image">
+                    <img src="images/benevolat.png" alt="Associations">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <div class="slide-layout">
+                <div class="slide-title">Nos services</div>
+                <div class="slide-content">
+                  <div class="slide-text">
+                    <h3>Section spéciale Ramadan</h3>
+                    <p>Trouvez et soutenez les lieux offrant des repas gratuits durant le Ramadan</p>
+                  </div>
+                  <div class="slide-image">
+                    <img src="images/tableramadan.png" alt="Ramadan">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+    
+          <!-- Flèches -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+    
+          <!-- Indicateurs -->
+          <div class="carousel-indicators mt-3">
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3"></button>
+          </div>
+        </div>
+      </div>
+    
+
+
+       <!-- En-tête aligné à gauche -->
+    <div class="header-wrapper">
+      <div class="header-section">
+          <div class="logo">
+              <img src="images/main.png" alt="Pourquoi soutenir">
+          </div>
+          <div class="title">
+              <h1>Pourquoi soutenir Assirem</h1>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section avec boîtes centrées -->
+  <section class="main-section">
+      <div class="box-container">
+          <div class="box box1">
+              <div class="box-content">
+                  <h3 class="box-title">+ de 200</h3>
+                  <p>repas offerts chaque semaine aux enfants.</p>
+              </div>
+              <div class="triangle"><span class="triangle-number">1</span></div>
+          </div>
+
+          <div class="box box2">
+              <div class="box-content">
+                  <h3 class="box-title">+ de 500</h3>
+                  <p>bénévoles engagés sur le terrain</p>
+              </div>
+              <div class="triangle"><span class="triangle-number">2</span></div>
+          </div>
+
+          <div class="box box3">
+              <div class="box-content">
+                  <h3 class="box-title">+ de 1000</h3>
+                  <p>dons distribués aux associations par mois.</p>
+              </div>
+              <div class="triangle"><span class="triangle-number">3</span></div>
+          </div>
+      </div>
+  </section>
+
+
+
+  <footer class="pt-5">
+    <div class="container">
+  
+      <!-- Logo + Centre + Contact -->
+      <div class="row justify-content-between align-items-center mb-5">
+        <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+          <img src="images/footer.png" alt="Logo Assirem" class="footer-logo">
+        </div>
+  
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <h2 class="fw-bold">Rejoignez notre <br> communauté solidaire <br>dès aujourd'hui</h2>
+      <a href="../login/login.html">
+    <button class="btn btn-lg mt-3" style="background-color: #f4b9b5; border: none;">Agir avec nous</button>
+</a>
+        </div>
+  
+        <div class="col-md-4 contact-info mt-3 mt-md-0">
+          <h3 style="color: orange;">Avez-vous des questions ?</h3>
+          <div style="font-weight:500;">Contactez nous </div>
+          <br>
+          <div>📧 contact@assirem.org</div>
+          <div>📱 0512 345 678</div>
+          <div>☎️ 026 987 654</div>
+        </div>
+      </div>
+  
+      <!-- Navigation, Services, Partenaires -->
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4 footer-section">
+          <h5>Navigation</h5>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-house-fill"></i> Accueil</li>
+            <li><i class="bi bi-heart-fill"></i> Activitées</li>
+            <li><i class="bi bi-moon-fill"></i> Ramadan</li>
+            <li><i class="bi bi-people-fill"></i> Collaborer</li>
+          </ul>
+        </div>
+  
+        <div class="col-md-4 mb-4 footer-section">
+          <h5>Nos services</h5>
+          <ul class="list-unstyled">
+            <li>Dons disponibles</li>
+            <li>Bénévolat</li>
+            <li>Collecte des dons</li>
+            <li>Dons du sang</li>
+          </ul>
+        </div>
+  
+        <div class="col-md-4 mb-4 footer-section">
+          <h5>Associations partenaires</h5>
+          <ul class="list-unstyled">
+            <li><a href="lien-vers-la-page-ou-la-section" class="text-decoration-none">Associations partenaires</a></li>
+          </ul>
+        </div>
+  
+    </div>
+  
+    <div class="footer-bottom w-100 d-flex justify-content-between align-items-center px-4 py-3 flex-wrap position-relative">
+      <img src="images/logo.png" alt="Logo Assirem" class="footer-logo2 mb-2 mb-md-0">
+    
+      <div class="footer-text d-flex align-items-center flex-grow-1 justify-content-center mb-2 mb-md-0">
+        <p class="mb-0">© 2025 Assirem. Tous droits réservés</p>
+      </div>
+    
+      <!-- Flèche retour en haut dans le flux -->
+      <div class="mb-2 mb-md-0">
+        <a href="#" class="text-center text-decoration-none d-block">
+          <img src="images/retour.png" alt="Retour en haut" style="width: 30px; height: auto;">
+          <div class="small text-dark">Retour en haut</div>
+        </a>
+      </div>
+    </div>
+    
+  
+  <!-- Réseaux sociaux flottants -->
+  <div class="floating-social">
+    <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+    <a href="https://tiktok.com" target="_blank"><i class="bi bi-tiktok"></i></a>
+  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

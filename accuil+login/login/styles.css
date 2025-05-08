@@ -1,0 +1,264 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.auth-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-section {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s ease-in-out;
+}
+
+.login-section {
+    left: 0;
+    z-index: 1;
+}
+
+.signup-section {
+    right: 0;
+    z-index: 1;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+}
+
+.illustration-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f8eafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.8s ease-in-out;
+    z-index: 10;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #DBB4E0 0%, #FFAECE 100%);
+}
+
+.illustration-content {
+    max-width: 90%;
+    text-align: center;
+    padding: 2rem;
+}
+
+.auth-container.signup-active .illustration-panel {
+    transform: translateX(-100%);
+}
+
+.login-illustration, .signup-illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease-in-out;
+    padding: 2rem;
+}
+
+.signup-illustration {
+    opacity: 0;
+}
+
+.auth-container.signup-active .login-illustration {
+    opacity: 0;
+}
+
+.auth-container.signup-active .signup-illustration {
+    opacity: 1;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #dee2e6;
+}
+
+.divider::before {
+    margin-right: 1rem;
+}
+
+.divider::after {
+    margin-left: 1rem;
+}
+.auth-buttons {
+display: flex;
+flex-direction: row-reverse; /* Flip order visually */
+gap: 1rem;
+width: 100%;
+margin-bottom: 0.5rem;
+}
+
+
+
+.btn-google,
+.btn-facebook {
+    border-radius: 40px;
+    height: 73px;
+    padding: 1rem 0rem;
+    gap: 20px;
+    transition: all 0.5s ease;
+}
+
+.btn-google {
+    flex: 1;
+    background-color: #EAD2EFE5;
+    border: 1px solid #ced4da;
+    color: #212529;
+    font-weight: 500;
+
+}
+
+.btn-facebook {
+    flex-shrink: 0;
+    background-color: white;
+    border: 3px solid #EAD2EF;
+    width: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212529;
+    
+    overflow: hidden;
+    white-space: nowrap;
+}
+.btn-google img,
+.btn-faceook img {
+    height: 37px;
+    width: 37px;
+    margin: 0 auto;
+}
+
+.btn-facebook span {
+    display: none;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.13s ease, width 0.3s ease;
+}
+.btn-google span {
+    transition : width 0.5s ease;
+}
+.btn-facebook:hover {
+    flex: 3;
+    background-color: #EAD2EF;
+    width: auto;
+}
+
+.btn-facebook:hover span {
+    opacity: 1;
+    width: auto;
+    display: inline-block;
+
+}
+
+.auth-buttons:hover .btn-facebook:hover ~ .btn-google span {
+    opacity: 0;
+    width: 0;
+    display: none;
+
+    overflow: hidden;
+}
+ 
+.btn-facebook:hover ~ .btn-google {
+    background-color: white;
+    border: 3px solid #EAD2EF;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-auth {
+    background-color: #e9d5ee;
+    color: #6c2a6a;
+    border: 1px solid #6c2a6a;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: #d8b9e0;
+}
+
+.purple-text {
+    color: #A15EAA;
+}
+
+.switch-form-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.switch-form-link {
+    color: #A15EAA;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .form-section {
+        width: 100%;
+    }
+
+    .illustration-panel {
+        display: none;
+    }
+}

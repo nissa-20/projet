@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Login Form Section -->
+        <div class="form-section login-section">
+            <div class="auth-form">
+                <div class="welcome-text">
+                    <h2><span class="purple-text">Bienvenue</span> à nouveau</h2>
+                </div>
+
+                <div class="auth-buttons">
+                    <button class="btn-facebook">
+                      <img src="./images/facebook.svg" class="fbImage" alt="Facebook logo" width="37" height="37">
+                      <span>S'inscrire avec Facebook</span>
+                    </button>
+                    <button class="btn-google">
+                      <img src="./images/google.svg" alt="Google logo" width="37" height="37">
+                      <span>S'inscrire avec Google</span>
+                    </button>
+                  </div>
+
+                <div class="divider">Ou</div>
+
+                <form>
+                    <input type="email" class="form-control" placeholder="Adresse email">
+                    <div class="mb-3 password-toggle">
+                        <input type="password" class="form-control" placeholder="Mot de passe">
+                        <i class="far fa-eye"></i>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-end">
+                        <small class="text-muted">Mot de passe oublié ?</small>
+                    </div>
+                    <button type="button" class="btn btn-auth">Se connecter</button>
+                </form>
+
+                <div class="switch-form-text">
+                    Première fois ici ? <a class="switch-form-link" id="switch-to-signup">Inscrivez vous maintenant</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Form Section -->
+        <div class="form-section signup-section">
+            <div class="auth-form">
+                <div class="welcome-text">
+                    <h2><span class="purple-text">Bienvenue</span> parmi nous</h2>
+                </div>
+
+                <div class="auth-buttons">
+                    <button class="btn-facebook">
+                        <img src="./images/facebook.svg" alt="Facebook logo" width="37" height="37">
+                        <span>S'inscrire avec Facebook</span>
+                    </button>
+                    <button class="btn-google">
+                        <img src="./images/google.svg" alt="Google logo" width="37" height="37">
+                        <span>S'inscrire avec Google</span>
+                    </button>
+                </div>
+
+                <div class="divider">Ou</div>
+
+                <form>
+                    <input type="text" class="form-control" placeholder="Nom complet">
+                    <input type="email" class="form-control" placeholder="Adresse email">
+                    <div class="mb-3 password-toggle">
+                        <input type="password" class="form-control" placeholder="Mot de passe">
+                        <i class="far fa-eye"></i>
+                    </div>
+                    <div class="mb-3 password-toggle">
+                        <input type="password" class="form-control" placeholder="Confirmez le mot de passe">
+                        <i class="far fa-eye"></i>
+                    </div>
+                    <button type="button" class="btn btn-auth">Créer un compte</button>
+                </form>
+
+                <div class="switch-form-text">
+                    Déjà un compte ? <a class="switch-form-link" id="switch-to-login">Connectez vous maintenant</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Illustration Panel -->
+        <div class="illustration-panel">
+            <div class="login-illustration">
+                <h2 class="mb-3">Continuons ensemble à<br>faire la différence</h2>
+                <h4 class="purple-text mb-4 fs-1">un geste à la fois.</h4>
+                <img src="./images/illustration.svg" alt="Illustration" class="img-fluid">
+            </div>
+            <div class="signup-illustration">
+                <h2 class="mb-3">Rejoignez-nous et<br>changeons des vies</h2>
+                <h4 class="purple-text mb-4 fs-1">un geste à la fois.</h4>
+                <img src="./images/illustration.svg" alt="Illustration" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js">
+
+    </script>
+</body>
+</html>
